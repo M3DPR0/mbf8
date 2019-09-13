@@ -10,12 +10,10 @@ from getpass import getpass
 from multiprocessing.pool import ThreadPool
 
 
-#### URL ####
-url='https://graph.facebook.com/'
-fb='https://api.facebook.com/restserver.php'
+url = "https://graph.facebook.com/{}"
+api="https://api.facebook.com/{}"
 headers={'"user-agent": "Mozilla/5.0 (Linux; Android 8.0.0; SM-A600G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36"'}
 s=requests.Session()
-r = requests.get('https://graph.facebook.com/', timeout=5)
 
 
 
