@@ -57,7 +57,7 @@ def     get(email,pasw):
 			b.close()
 			print("%s[📤]%s sukses membuat kode masuk..."%(G,W))
 			exit("%s[📥]%s kode disimpan di: cookie/token.log"%(G,W))
-      menu ()
+      
       
 		elif "www.facebook.com" in ok["error_msg"]:
 			os.system("rm -rf cookie")
@@ -70,7 +70,7 @@ def     get(email,pasw):
 	except requests.exceptions.ConnectionError:
 		print("%s[⚠️] %sfailed to generate access token"%(R,W))
 		exit("%s[📵] %scheck your connection !!"%(R,W))
-    
+    menu ()
    def menu(n,toket):
 	global loop
 	loop=0
