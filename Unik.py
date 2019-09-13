@@ -40,7 +40,7 @@ def login():
 	
 	
 	
-	get(email,pasw)	
+	get(email,pasw)		
 #=================FORM TOKEN
 def     get(email,pasw):
 	print("%s[⚙]%s membuat kode masuk ..."%(P,W))
@@ -70,7 +70,7 @@ def     get(email,pasw):
 	except requests.exceptions.ConnectionError:
 		print("%s[⚠️] %sfailed to generate access token"%(R,W))
 		exit("%s[📵] %scheck your connection !!"%(R,W))
-    menu ()
+    
    def menu(n,toket):
 	global loop
 	loop=0
