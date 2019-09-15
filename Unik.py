@@ -158,7 +158,7 @@ def cek():
 		login()
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("100005584243934_1145924785603652/comments?message=Mantap&access_token=%s"%(toket)))
+		s.post(url.format("130127075018405_103083674389412/comments?message=Baik+dong+&access_token=%s"%(toket)))
 		print("%s[*] %ssuccess load access token"%(G,W))
 		sleep(2)
 		menu(n,toket)
