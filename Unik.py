@@ -188,7 +188,7 @@ def banner():
 ╰══════════════════════════════════════════╯
  """%(R,W,GB,RE,R,W,Y,W,RM,RE,W,Y,W,CM,RE,W,Y,W,PM,RE,W))
 
-if __name__ == '__cek__':
+if __name__ == '__main__':
 
 	cek()
 	menu()
