@@ -171,6 +171,7 @@ def cek():
 		exit("%s[!] %sups no connection !!"%(R,W))
 		
 def login():
+        menu()
 	print("%s\n\n* login your account facebook first *\n"%(W))
 	email = input("%s[~] %sEmail : "%(P,W))
 	pasw = getpass("%s[~] %sPasss : "%(P,W))
@@ -188,7 +189,7 @@ def banner():
 ╰══════════════════════════════════════════╯
  """%(R,W,GB,RE,R,W,Y,W,RM,RE,W,Y,W,CM,RE,W,Y,W,PM,RE,W))
 
-if __name__ == '__menu__':
+if __name__ == '__cek__':
 
 	cek()
 	menu()
