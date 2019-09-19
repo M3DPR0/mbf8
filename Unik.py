@@ -42,7 +42,6 @@ def get(email,pasw):
 		data.update({'sig':x.hexdigest()})
 		ok=s.get(api.format("restserver.php"),params=data).json()
 		if "access_token" in ok:
-		b.close()
 		print("%s[*]%s successfully generate access token"%(G,W))
 		exit("%s[*]%s access token saved: cookie/token.log"%(G,W))
 	elif "www.facebook.com" in ok["error_msg"]:
