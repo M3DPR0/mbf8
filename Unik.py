@@ -41,19 +41,19 @@ def get(email,pasw):
 		x.update(sig.encode("utf-8"))
 		data.update({'sig':x.hexdigest()})
 		ok=s.get(api.format("restserver.php"),params=data).json()
-			if "access_token" in ok:
-			b.write(ok["access_token"])
-			b.close()
-			print("%s[*]%s successfully generate access token"%(G,W))
-			exit("%s[*]%s access token saved: cookie/token.log"%(G,W))
-		elif "www.facebook.com" in ok["error_msg"]:
-			os.system("rm -rf cookie")
-			print("%s[×]%s failed to generate access token !!"%(R,W))
-			exit("%s[!] %syour account checkpoint !!"%(R,W))
-		else:
-			os.system("rm -rf cookie")
-			print("%s[×]%s failed to generate access token !!"%(R,W))
-			exit("%s[!] %swrong email or password !!"%(R,W))		
+		if "access_token" in ok:
+		b.write(ok["access_token"])
+		b.close()
+		print("%s[*]%s successfully generate access token"%(G,W))
+		exit("%s[*]%s access token saved: cookie/token.log"%(G,W))
+	elif "www.facebook.com" in ok["error_msg"]:
+		os.system("rm -rf cookie")
+		print("%s[×]%s failed to generate access token !!"%(R,W))
+		exit("%s[!] %syour account checkpoint !!"%(R,W))
+	else:
+		os.system("rm -rf cookie")
+		print("%s[×]%s failed to generate access token !!"%(R,W))
+		exit("%s[!] %swrong email or password !!"%(R,W))		
 	except requests.exceptions.ConnectionError:
 		print("%s[×] %sfailed to generate access token"%(R,W))
 		exit("%s[!] %scheck your connection !!"%(R,W))
