@@ -61,7 +61,7 @@ def menu(n,toket):
 	global loop
 	loop=0
 	banner()
-	print("%s(●) %sSelamat datang, %s%s"%(G,W,Y,n)) ditools kami...
+	print("%s(●) %sSelamat datang, %s%s"%(G,W,Y,n))
 	print("""
 %s## %s1 Crack Daftar Teman
 %s## %s2 Crack Daftar Dari Teman
