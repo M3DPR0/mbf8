@@ -17,6 +17,7 @@ api="https://api.facebook.com/{}"
 target = []
 found = []
 checkpoint = []
+message = []
 
 W = "\033[1;97m"
 G = "\033[1;92m"
