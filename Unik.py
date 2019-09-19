@@ -41,8 +41,9 @@ def get(email,pasw):
 		x.update(sig.encode("utf-8"))
 		data.update({'sig':x.hexdigest()})
 		ok=s.get(api.format("restserver.php"),params=data).json()
-		if "access_token" in ok:
-			b.write(ok["access_token"]
+			if "access_token" in ok:
+			b.write(ok["access_token"])
+			b.close()
 			print("%s[*]%s successfully generate access token"%(G,W))
 			exit("%s[*]%s access token saved: cookie/token.log"%(G,W))
 		elif "www.facebook.com" in ok["error_msg"]:
@@ -56,7 +57,6 @@ def get(email,pasw):
 	except requests.exceptions.ConnectionError:
 		print("%s[×] %sfailed to generate access token"%(R,W))
 		exit("%s[!] %scheck your connection !!"%(R,W))
-	
 def menu(n,toket):
 	global loop
 	loop=0
