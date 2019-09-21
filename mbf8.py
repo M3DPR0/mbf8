@@ -178,8 +178,12 @@ def login():
 def banner():
 	os.system("clear")
 	print("""
-%s[+]%s====== %sAuto Brute Force Facebook%s ======%s[+]%s
-
+╭━━━╮%s╋%s  %sBRUTE FACEBOOK F8%s  %s╋%s
+╭━╮┃╋╋╋╋╋╋╋╋┏┓╋╋╋╋╋╋╋┏┓
+┃╰━━╮┏━━┳━┓╋╋┃┗━┳━━┳━━┫┃┏┓
+╰━━╮┃┃┏┓┃┏┓┳━┫┏┓┃┏┓┃┏┓┃┗┛┛
+┃╰━╯┃┃┏┓┃┃┃┣━┫┗┛┃┗┛┃┗┛┃┏┓┓
+╰━━━╯┗┛┗┻┛┗┛╋┗━━┻━━┻━━┻┛┗┛
 ╭══════════════════════════════════════════╮
 ║%s# %sAuthor : %sSoesanto%s %s                     ║
 ║%s# %sFB     : %sHttps://fb.me/soesanto%s  %s      ║
