@@ -712,7 +712,8 @@ if __name__=='__main__':
 	except (KeyError,IOError):
 		os.system('clear')
 		print(logo)
-        print(p+'''┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+        print(p+'''
+	┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
         ┃━━'+m+'Anda harus login facebook terlebih dahulu...'+p+'━━━━┛
         ┣━━━━━━━━━━━━━━━━━━━━━━━━━━┓
         em=input(p+'\n┣━━━'+b+'Nomor ponsel atau email'+p+'┣━'+b+':')
