@@ -712,15 +712,13 @@ if __name__=='__main__':
 	except (KeyError,IOError):
 		os.system('clear')
 		print(logo)
-        print(p+'''
-	┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-        ┃━━'+m+'Anda harus login facebook terlebih dahulu...'+p+'━━━━┛
-        ┣━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-        em=input(p+'\n┣━━━'+b+'Nomor ponsel atau email'+p+'┣━'+b+':')
-        ┣━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-        pas=getpass(p+'┣━━━'+b+'Kata Sandi			   '+p+'┣━'+b+':')
-        ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-	''')
+                print(p+'┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
+                print(p+'┃━━'+m+'Anda harus login facebook terlebih dahulu...'+p+'━━━━┛')
+                print(p+'┣━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
+                em=input(p+'\n┣━━━'+b+'Nomor ponsel atau email'+p+'┣━'+b+':')
+                print(p+'┣━━━━━━━━━━━━━━━━━━━━━━━━━━┫')
+                pas=getpass(p+'┣━━━'+b+'Kata Sandi			   '+p+'┣━'+b+':')
+                print(p+'┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛')
 		WriteFormatConfig(h+' Login...')
 		try:
 			sig='api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+em+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pas+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
