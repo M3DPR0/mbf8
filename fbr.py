@@ -720,8 +720,8 @@ if __name__=='__main__':
         ┣━━━━━━━━━━━━━━━━━━━━━━━━━━┫
         pas=getpass(p+'┣━━━'+b+'Kata Sandi			   '+p+'┣━'+b+':')
         ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	''')
 		WriteFormatConfig(h+' Login...')
-		''')
 		try:
 			sig='api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+em+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pas+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
 			data={"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":em,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pas,"return_ssl_resources":"0","v":"1.0"}
